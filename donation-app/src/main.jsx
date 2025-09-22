@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import Organisation from './pages/Organisation.jsx'
 import { ViewChildren } from './pages/ViewChildren.jsx'
-import Donate from './Pages/Donate.jsx'
+import Donate from './pages/Donate.jsx'
 
 
 createRoot(document.getElementById('root')).render(
