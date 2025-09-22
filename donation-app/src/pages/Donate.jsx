@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import NavBar from '../NavBar/NavBar';
 import API_URL from '../config';
 
-function Donate() {
+const Donate =()=> {
   const [donationType, setDonationType] = useState('Monetary Donation');
   const [child, setChild] = useState('');
   const [contact, setContact] = useState('');
