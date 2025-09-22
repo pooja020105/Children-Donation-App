@@ -8,7 +8,8 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-  origin: 'http://children-donation-app-1.onrender.com'
+  origin: 'http://children-donation-app-1.onrender.com',
+  credentials: true,
 }));
 app.use(express.json());
 
