@@ -1,3 +1,5 @@
+import API_URL from '../config'; 
+
 export const Dashboard = ({
   orgName,
   desc,
@@ -42,7 +44,7 @@ export const Dashboard = ({
               >
                 <div className="flex items-start gap-4">
                   <img
-                    src={`http://localhost:5000${item.childimg}`}
+                    src={`${API_URL}${item.childimg}`}
                     alt={item.fullName}
                     className="w-16 h-16 rounded-full object-cover"
                   />

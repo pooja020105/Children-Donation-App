@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import NavBar from '../NavBar/NavBar';
+import API_URL from '../config';
 
 function Donate() {
   const [donationType, setDonationType] = useState('Monetary Donation');
@@ -9,8 +10,6 @@ function Donate() {
   const [childrenList, setChildrenList] = useState([]);
   const [orgEmail, setOrgEmail] = useState('');
   const [organisationList, setOrganisationList] = useState([]);
-
-  const API_URL = 'http://localhost:5000';
 
   useEffect(() => {
     const fetchChildren = async () => {

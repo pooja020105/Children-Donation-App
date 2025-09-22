@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../NavBar/NavBar';
 import { Dashboard } from './Dashboard';
 import axios from 'axios';
+import API_URL from '../config'; 
+
 
 function Organisation() {
   const [selectedOrg, setSelectedOrg] = useState(null);
@@ -26,8 +28,6 @@ function Organisation() {
   const [childimg, setChildImg] = useState('');
   const [childimgFile, setChildImgFile] = useState(null);
   const [editChildData, setEditChildData] = useState(null);
-
-  const API_URL = 'http://localhost:5000';
 
   useEffect(() => {
     const fetchOrganisations = async () => {
@@ -283,7 +283,7 @@ function Organisation() {
               setDream(child.dream || "");
               setInterest(child.interest || "");
               setStory(child.story || "");
-              setChildImg(`http://localhost:5000${child.childimg}` || "");
+              setChildImg(`${API_URL}${child.childimg}` || "");
             }}
             onDeleteChild={handleDeleteChild}
           />

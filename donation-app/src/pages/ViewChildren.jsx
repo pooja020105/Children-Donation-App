@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import axios from "axios";
+import API_URL from '../config'; 
+
 
 export function ViewChildren() {
   const [orgs, setOrgs] = useState([]);
@@ -14,7 +16,7 @@ export function ViewChildren() {
 
   const fetchOrgs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/organisations");
+      const res = await axios.get(`${API_URL}/organisations`);
       setOrgs(res.data);
     } catch (error) {
       console.error("Error fetching organisations:", error);
@@ -23,7 +25,7 @@ export function ViewChildren() {
 
   const fetchChildren = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/children");
+      const res = await axios.get(`${API_URL}/children`);
       setChildren(res.data);
     } catch (error) {
       console.error("Error fetching children:", error);
@@ -67,7 +69,7 @@ export function ViewChildren() {
                   </div>
                   {child.childimg && (
                     <img
-  src={`http://localhost:5000${child.childimg}`}
+  src={`${API_URL}${child.childimg}`}
   alt={child.fullName}
   className="w-16 h-16 rounded-full object-cover"
 />
